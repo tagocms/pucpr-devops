@@ -6,8 +6,6 @@
 //
 
 import SpriteKit
-import UIKit
-
 class BallNode: SKShapeNode {
     init(ellipseOf size: CGSize, position: CGPoint) {
         super.init()
