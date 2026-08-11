@@ -25,7 +25,7 @@ extension GameScene {
     private func setUpScene() {
         let ballNode = BallNode(
             ellipseOf: CGSize(width: 20, height: 20),
-            position: CGPoint(x: 200, y: 300)
+            position: CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         )
         self.ballNode = ballNode
         self.addChild(ballNode)
