@@ -23,11 +23,14 @@ class GameScene: SKScene {
 // Scene initialization
 extension GameScene {
     private func setUpScene() {
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -1)
+        
         let ballNode = BallNode(
             ellipseOf: CGSize(width: 20, height: 20),
             position: CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         )
         self.ballNode = ballNode
+        self.ballNode?.physicsBody = SKPhysicsBody(circleOfRadius: 10)
         self.addChild(ballNode)
     }
     
@@ -39,15 +42,13 @@ extension GameScene {
 // Input handling
 extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            self.ballNode?.newPosition = touch.location(in: self)
+        for _ in touches {
+            self.ballNode?.physicsBody?.applyImpulse(.init(dx: 0, dy: 1))
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            self.ballNode?.newPosition = touch.location(in: self)
-        }
+        //
     }
 }
 
