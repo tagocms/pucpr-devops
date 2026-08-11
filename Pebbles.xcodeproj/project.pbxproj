@@ -15,6 +15,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				Entities/BallNode.swift,
 				GameScene.swift,
 			);
 			target = B070463D302BA211009474AA /* Pebbles iOS */;
