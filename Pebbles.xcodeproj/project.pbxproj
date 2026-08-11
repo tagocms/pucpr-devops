@@ -14,9 +14,7 @@
 		B070464F302BA212009474AA /* Exceptions for "Pebbles Shared" folder in "Pebbles iOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Actions.sks,
 				Assets.xcassets,
-				GameScene.sks,
 				GameScene.swift,
 			);
 			target = B070463D302BA211009474AA /* Pebbles iOS */;
