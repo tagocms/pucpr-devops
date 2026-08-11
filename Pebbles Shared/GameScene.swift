@@ -37,9 +37,11 @@ extension GameScene {
         ]
         let ground = SKShapeNode(splinePoints: &splinePoints, count: splinePoints.count)
         ground.lineWidth = 5
-        ground.physicsBody = SKPhysicsBody(edgeChainFrom: ground.path!)
-        ground.physicsBody?.restitution = 0.75
-        ground.physicsBody?.isDynamic = false
+        if let path = ground.path {
+            ground.physicsBody = SKPhysicsBody(edgeChainFrom: path)
+            ground.physicsBody?.restitution = 0.75
+            ground.physicsBody?.isDynamic = false
+        }
         self.addChild(ground)
     }
     
