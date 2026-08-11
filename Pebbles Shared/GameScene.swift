@@ -23,8 +23,6 @@ class GameScene: SKScene {
 // Scene initialization
 extension GameScene {
     private func setUpScene() {
-//        self.physicsWorld.gravity = CGVector(dx: 0, dy: -1)
-        
         let ballNode = BallNode(
             ellipseOf: CGSize(width: 20, height: 20),
             position: CGPoint(x: self.size.width / 2, y: self.size.height / 2)
