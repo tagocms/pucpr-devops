@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		B07046BC303507EB009474AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0704631302BA20F009474AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B070463D302BA211009474AA;
+			remoteInfo = "Pebbles iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B070463E302BA211009474AA /* Pebbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pebbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B07046B8303507EB009474AA /* PebblesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebblesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -46,10 +57,22 @@
 			path = "Pebbles iOS";
 			sourceTree = "<group>";
 		};
+		B07046B9303507EB009474AA /* PebblesTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PebblesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B070463B302BA211009474AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B07046B5303507EB009474AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,6 +87,7 @@
 			children = (
 				B0704635302BA20F009474AA /* Pebbles Shared */,
 				B0704640302BA211009474AA /* Pebbles iOS */,
+				B07046B9303507EB009474AA /* PebblesTests */,
 				B070463F302BA211009474AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				B070463E302BA211009474AA /* Pebbles.app */,
+				B07046B8303507EB009474AA /* PebblesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +126,29 @@
 			productReference = B070463E302BA211009474AA /* Pebbles.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B07046B7303507EB009474AA /* PebblesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B07046C0303507EB009474AA /* Build configuration list for PBXNativeTarget "PebblesTests" */;
+			buildPhases = (
+				B07046B4303507EB009474AA /* Sources */,
+				B07046B5303507EB009474AA /* Frameworks */,
+				B07046B6303507EB009474AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B07046BD303507EB009474AA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B07046B9303507EB009474AA /* PebblesTests */,
+			);
+			name = PebblesTests;
+			packageProductDependencies = (
+			);
+			productName = PebblesTests;
+			productReference = B07046B8303507EB009474AA /* PebblesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -113,6 +161,10 @@
 				TargetAttributes = {
 					B070463D302BA211009474AA = {
 						CreatedOnToolsVersion = 26.6;
+					};
+					B07046B7303507EB009474AA = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = B070463D302BA211009474AA;
 					};
 				};
 			};
@@ -131,12 +183,20 @@
 			projectRoot = "";
 			targets = (
 				B070463D302BA211009474AA /* Pebbles iOS */,
+				B07046B7303507EB009474AA /* PebblesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B070463C302BA211009474AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B07046B6303507EB009474AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -153,7 +213,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B07046B4303507EB009474AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B07046BD303507EB009474AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B070463D302BA211009474AA /* Pebbles iOS */;
+			targetProxy = B07046BC303507EB009474AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B0704651302BA212009474AA /* Debug */ = {
@@ -170,7 +245,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -203,7 +278,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +414,53 @@
 			};
 			name = Release;
 		};
+		B07046BE303507EB009474AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22MHF556GA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiago.santos.PebblesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pebbles.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pebbles";
+			};
+			name = Debug;
+		};
+		B07046BF303507EB009474AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22MHF556GA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiago.santos.PebblesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pebbles.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pebbles";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,6 +478,15 @@
 			buildConfigurations = (
 				B0704651302BA212009474AA /* Debug */,
 				B0704652302BA212009474AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B07046C0303507EB009474AA /* Build configuration list for PBXNativeTarget "PebblesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B07046BE303507EB009474AA /* Debug */,
+				B07046BF303507EB009474AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

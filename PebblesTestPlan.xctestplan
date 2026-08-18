@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "D7394404-94E9-4800-ABA5-6BDF92AFCFC7",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Pebbles.xcodeproj",
+      "identifier" : "B070463D302BA211009474AA",
+      "name" : "Pebbles iOS"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Pebbles.xcodeproj",
+        "identifier" : "B07046B7303507EB009474AA",
+        "name" : "PebblesTests"
+      }
+    }
+  ],
+  "version" : 1
+}
