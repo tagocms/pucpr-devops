@@ -19,14 +19,7 @@ jobs:
 
       - run: echo "⚙️ Building and testing the iOS app..."
       - name: Build and Test
-        id: build-step
-        uses: brightdigit/swift-build@v1
-        with:
-          scheme: Pebbles
-          type: ios
-          deviceName: iPhone 16
-          osVersion: '17.6'
-          use-xcbeautify: true
-          xcbeautify-renderer: github-actions
+        run: |
+          xcodebuild test -scheme Pebbles -destination 'platform=iOS Simulator,name=iPhone 16'
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
