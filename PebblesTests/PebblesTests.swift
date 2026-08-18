@@ -5,14 +5,21 @@
 //  Created by Tiago Camargo Maciel dos Santos on 18/08/26.
 //
 
+import SpriteKit
 import Testing
+import UIKit
 
-struct PebblesTests {
+@testable import Pebbles
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-        // Swift Testing Documentation
-        // https://developer.apple.com/documentation/testing
+@Suite("GameScene tests")
+struct GameSceneTests {
+    @Test func `ball and ground nodes exist after setupScene called`() async throws {
+        let vc = await GameViewController()
+        let gameScene = await GameScene.newGameScene(size: vc.view.bounds.size)
+        
+        #expect(await gameScene.children.isEmpty == true)
+        await gameScene.didMove(to: .init())
+        #expect(await gameScene.children.isEmpty == false)
     }
 
 }
