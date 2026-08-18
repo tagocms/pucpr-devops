@@ -31,7 +31,7 @@ jobs:
 
       - name: Compact to ZIP
         run: |
-          cd ./DerivedData/Build/Products/Debug-iphonesimulator
+          cd ./DerivedData/Build/Products/Debug-iphoneos
           zip -r {{ github.workspace }}/Pebbles-Simulator.zip Pebbles.app
       
       - uses: actions/upload-artifact@v7
