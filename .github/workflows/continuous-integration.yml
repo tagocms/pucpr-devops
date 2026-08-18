@@ -18,8 +18,10 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
 
       - run: echo "⚙️ Building and testing the iOS app..."
-      - name: Build and Test
-        run: |
-          xcodebuild test -scheme Pebbles -destination 'platform=iOS Simulator,name=iPhone 16'
+      - name: Swift Build and Test
+        uses: brightdigit/swift-build@v1
+        with:
+          type: ios
+          scheme: Pebbles iOS
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
