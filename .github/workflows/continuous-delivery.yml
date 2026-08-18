@@ -32,13 +32,13 @@ jobs:
       - name: Compact to ZIP
         run: |
           cd ./DerivedData/Build/Products/Debug-iphoneos
-          zip -r {{ github.workspace }}/Pebbles-Simulator.zip Pebbles.app
+          zip -r ${{ github.workspace }}/Pebbles-Simulator.zip Pebbles.app
       
       - uses: actions/upload-artifact@v7
         with:
           name: Pebbles-iOS-Build
           path: |
-            {{ github.workspace }}/Pebbles-Simulator.zip
+            ${{ github.workspace }}/Pebbles-Simulator.zip
           overwrite: true
           retention-days: 5
 
