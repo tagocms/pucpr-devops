@@ -18,6 +18,10 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
 
       - run: echo "⚙️ Building and testing the iOS app..."
+      - name: Install Dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -scheme "Pebbles iOS"
       - name: Swift Build and Test
         run: |
           xcodebuild test \

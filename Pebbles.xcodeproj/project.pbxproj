@@ -19,7 +19,6 @@
 /* Begin PBXFileReference section */
 		B070463E302BA211009474AA /* Pebbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pebbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07046B8303507EB009474AA /* PebblesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebblesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B07046C1303508DE009474AA /* Pebbles iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pebbles iOS.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -86,7 +85,6 @@
 		B0704630302BA20E009474AA = {
 			isa = PBXGroup;
 			children = (
-				B07046C1303508DE009474AA /* Pebbles iOS.xctestplan */,
 				B0704635302BA20F009474AA /* Pebbles Shared */,
 				B0704640302BA211009474AA /* Pebbles iOS */,
 				B07046B9303507EB009474AA /* PebblesTests */,
