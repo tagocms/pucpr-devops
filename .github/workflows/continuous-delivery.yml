@@ -1,7 +1,7 @@
 name: iOS CD
 run-name: ${{ github.actor }} is running ${{ github.workflow }} on ${{ github.ref }}
 on:
-  pull_request:
+  push:
     branches:
       - main
 jobs:
