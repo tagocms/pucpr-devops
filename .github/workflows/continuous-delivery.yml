@@ -1,0 +1,45 @@
+name: iOS CD
+run-name: ${{ github.actor }} is running ${{ github.workflow }} on ${{ github.ref }}
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  Build-And-Upload:
+    runs-on: macos-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
+
+      - run: echo "⚙️ Building the iOS app..."
+      - name: Install Dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -scheme "Pebbles iOS"
+      - name: Swift Build (no signature)
+        run: |
+          xcodebuild build \
+            -project "Pebbles.xcodeproj" \
+            -scheme "Pebbles iOS" \
+            -configuration Debug \
+            -destination "generic/platform=iOS" \
+            -quiet \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            -derivedDataPath ./DerivedData
+
+      - name: Compact to ZIP
+        run: |
+          cd ./DerivedData/Build/Products/Debug-iphonesimulator
+          zip -r {{ github.workspace }}/Pebbles-Simulator.zip Pebbles.app
+      
+      - uses: actions/upload-artifact@v7
+        with:
+          name: Pebbles-iOS-Build
+          path: |
+            {{ github.workspace }}/Pebbles-Simulator.zip
+          overwrite: true
+          retention-days: 5
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
