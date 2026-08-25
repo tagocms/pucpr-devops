@@ -4,8 +4,8 @@ from pydantic import BaseModel
 app = FastAPI()
 
 class Position(BaseModel):
-    x: int
-    y: int
+    x: float
+    y: float
 
 INITIAL_POSITION = {'x': 0, 'y': 0}
 
@@ -16,7 +16,7 @@ POSITIONS = {
 
 @app.get("/position/{player_id}")
 def get_player_position(player_id: int):
-    return {"player_id": player_id, "position": POSITIONS[player_id]}
+    return POSITIONS[player_id]
 
 @app.post("/position/{player_id}")
 def update_player_position(player_id: int, position: Position):
