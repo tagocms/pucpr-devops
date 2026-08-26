@@ -46,6 +46,6 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: ./PebblesServer
-          file: ./PebblesServer/Dockerfile
+          file: ./PebblesServer/pebbles-server/Dockerfile
           push: false
           tags: user/app:latest
