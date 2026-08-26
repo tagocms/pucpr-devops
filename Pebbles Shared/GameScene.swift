@@ -10,13 +10,24 @@ import SpriteKit
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     fileprivate var ballNode : BallNode?
+    fileprivate var otherBallNode : BallNode?
+    fileprivate var playerID: Int = 0
 
     
-    class func newGameScene(size: CGSize) -> GameScene {
-        let scene = GameScene(size: size)
+    class func newGameScene(size: CGSize, newPlayerID: Int) -> GameScene {
+        let scene = GameScene(size: size, newPlayerID: newPlayerID)
         // Set the scale mode to scale to fit the window
         scene.scaleMode = .aspectFill
         return scene
+    }
+    
+    init(size: CGSize, newPlayerID: Int) {
+        self.playerID = newPlayerID
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -30,6 +41,16 @@ extension GameScene {
         self.ballNode = ballNode
         self.ballNode?.physicsBody = SKPhysicsBody(circleOfRadius: 10)
         self.addChild(ballNode)
+        self.ballNode?.id = self.playerID
+        
+        let otherBallNode = BallNode(
+            ellipseOf: CGSize(width: 20, height: 20),
+            position: CGPoint(x: self.size.width / 2 + 30, y: self.size.height / 2 + 30)
+        )
+        otherBallNode.fillColor = .green
+        otherBallNode.id = self.playerID == 1 ? 2 : 1
+        self.otherBallNode = otherBallNode
+        self.addChild(otherBallNode)
         
         var splinePoints = [
             CGPoint(x: 0, y: (self.size.height / 2) - 200),
@@ -63,6 +84,8 @@ extension GameScene {
 extension GameScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        self.ballNode?.update(currentTime)
+        self.ballNode?.update(currentTime, isHost: true)
+        
+        self.otherBallNode?.update(currentTime, isHost: false)
     }
 }
